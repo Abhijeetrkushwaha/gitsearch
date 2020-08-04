@@ -1,10 +1,11 @@
 import React from 'react';
-// import './App.css';
+import Search from './components/Search'
+import './App.css';
 
 function App() {
   return (
-    <div className="container center">
-      <h1>Abhijeet</h1>
+    <div className="container">
+      <Search />
     </div>
   );
 }
