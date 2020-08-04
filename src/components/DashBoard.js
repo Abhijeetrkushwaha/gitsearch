@@ -6,7 +6,7 @@ function DashBoard() {
         <div className="container dashboard center">
             <div className="profile">
                 <div className="img-div center">
-                    <img className="img" src={Model} />
+                    <img className="img" src={Model} alt="profile-pic" />
                 </div>
                 <div className="title center">
                     <h4 className="white-text">AbhijeetKushwaha</h4>
