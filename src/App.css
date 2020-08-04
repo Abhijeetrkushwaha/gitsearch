@@ -3,6 +3,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+html{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 body{
   min-height: 100vh;
   height: 100vh;
@@ -16,7 +19,7 @@ body{
   justify-content: center;
 }
 .search-body{
-  margin-bottom: 100px;
+  margin-bottom: 200px;
 }
 .main-color{
   color: #FDCB9E;
@@ -24,6 +27,48 @@ body{
 .sec-color{
   color: white;
 }
+form{
+  width: 400px;
+  max-width: 400px;
+}
 input[type="text"]{
   color: white;
+}
+input[type=text]:not(.browser-default):focus:not([readonly]){
+  border-color: #FDCB9E;
+    box-shadow: none;
+}
+/* input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+textarea:not(.browser-default):focus:not([readonly]){
+    border-color: purple;
+    box-shadow: none;
+} */
+
+/* DashBoard started */
+.dashboard{
+  height: 100vh;
+  min-height: 100vh;
+}
+.profile{
+  padding-top: 100px;
+}
+.img{
+  border-radius: 50%;
+  border: 5px solid black;
+}
+.img{
+  height: 200px;
+  width: 200px;
+}
+.follo-er-ing{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.column{
+  background-color: rgb(39, 39, 39);
+  padding: 10px 15px;
+  margin: 5px 2px;
 }

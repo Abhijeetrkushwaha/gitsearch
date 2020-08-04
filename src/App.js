@@ -1,11 +1,13 @@
 import React from 'react';
-import Search from './components/Search'
+// import Search from './components/Search';
+import DashBoard from './components/DashBoard';
 import './App.css';
 
 function App() {
   return (
-    <div className="container">
-      <Search />
+    <div className="git-search">
+      {/* <Search /> */}
+      <DashBoard />
     </div>
   );
 }
