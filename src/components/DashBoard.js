@@ -37,10 +37,10 @@ function DashBoard() {
                 <h4>Repositories</h4>
             </div>
             <div className="row">
-            <Repository />
-            <Repository />
-            <Repository />
-            <Repository />
+                <Repository />
+                <Repository />
+                <Repository />
+                <Repository />
             </div>
         </div>
         <Footer />
