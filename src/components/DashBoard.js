@@ -1,10 +1,12 @@
 import React from 'react';
 import Model from '../images/model.jpg';
 import Repository from './Repository';
+import Footer from './Footer'
 
 function DashBoard() {
     return (
-        <div className="container dashboard center">
+       <div>
+            <div className="container dashboard center">
             <div className="profile">
                 <div className="img-div center">
                     <img className="img" src={Model} alt="profile-pic" />
@@ -39,6 +41,9 @@ function DashBoard() {
             <Repository />
             <Repository />
         </div>
+        <Footer />
+       </div>
+
     )
 }
 

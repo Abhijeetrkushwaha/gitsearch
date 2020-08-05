@@ -40,10 +40,6 @@ textarea:not(.browser-default):focus:not([readonly]){
 } */
 
 /* DashBoard started */
-.dashboard{
-  height: 100vh;
-  min-height: 100vh;
-}
 .profile{
   padding-top: 50px;
 }
