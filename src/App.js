@@ -1,15 +1,18 @@
 import React from 'react';
 import Search from './components/Search';
-// import DashBoard from './components/DashBoard';
+import DashBoard from './components/DashBoard';
 import './App.css';
+import { BrowserRouter, Route } from 'react-router-dom'
 
-function App() {
+function App() { 
   return (
-    <div className="git-search">
-      <Search />
-      {/* <DashBoard /> */}
-      
-    </div>
+    <BrowserRouter>
+      <div className="git-search">
+        <Route exact path='/' component={Search} />
+        <Route path='/user' component={DashBoard} />
+        
+      </div>
+    </BrowserRouter>
   );
 }
 

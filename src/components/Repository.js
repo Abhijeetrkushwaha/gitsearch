@@ -2,7 +2,7 @@ import React from 'react';
 
 function Repository(){
     return (
-        <div className="section">
+        <div className="section col s12 l6">
             <div className="card z-depth-2">
                 <div className="card-content">
                     <span className="card-title">Project-1</span>
