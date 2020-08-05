@@ -1,5 +1,6 @@
 import React from 'react';
-import Model from '../images/model.jpg'
+import Model from '../images/model.jpg';
+import Repository from './Repository';
 
 function DashBoard() {
     return (
@@ -30,6 +31,13 @@ function DashBoard() {
                     </div>
                 </div>
             </div>
+            <div className="repo-num">
+                <h4>Repository</h4>
+            </div>
+            <Repository />
+            <Repository />
+            <Repository />
+            <Repository />
         </div>
     )
 }

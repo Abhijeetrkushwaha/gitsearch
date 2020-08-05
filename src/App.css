@@ -7,19 +7,9 @@ html{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 body{
-  min-height: 100vh;
-  height: 100vh;
   background: linear-gradient(#1B262C,#0F4C75) center no-repeat;
   background-size: cover;
-}
-.search{
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.search-body{
-  margin-bottom: 200px;
+  background-attachment: fixed;
 }
 .main-color{
   color: #FDCB9E;
@@ -28,8 +18,11 @@ body{
   color: white;
 }
 form{
-  width: 400px;
-  max-width: 400px;
+  width: 100%;
+  max-width: 500px;
+}
+.search{
+  padding-top: 50px;
 }
 input[type="text"]{
   color: white;
@@ -52,7 +45,7 @@ textarea:not(.browser-default):focus:not([readonly]){
   min-height: 100vh;
 }
 .profile{
-  padding-top: 100px;
+  padding-top: 50px;
 }
 .img{
   border-radius: 50%;
@@ -71,4 +64,10 @@ textarea:not(.browser-default):focus:not([readonly]){
   background-color: rgb(39, 39, 39);
   padding: 10px 15px;
   margin: 5px 2px;
+}
+.des{
+  padding-bottom: 10px;
+}
+.repo-num{
+  margin-top: 50px;
 }
