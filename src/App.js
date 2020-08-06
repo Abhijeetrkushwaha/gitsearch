@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <div className="git-search">
         <Route exact path='/' component={Search} />
-        <Route path='/user' component={DashBoard} />
+        <Route path='/:user' component={DashBoard} />
         
       </div>
     </BrowserRouter>
