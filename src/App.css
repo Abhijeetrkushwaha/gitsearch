@@ -68,3 +68,9 @@ textarea:not(.browser-default):focus:not([readonly]){
 .repo-num{
   margin-top: 50px;
 }
+.stars{
+  margin-right: 10px;
+}
+.star-fork{
+  padding-bottom: 10px;
+}

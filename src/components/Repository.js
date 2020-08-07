@@ -7,6 +7,7 @@ function Repository(){
                 <div className="card-content">
                     <span className="card-title">Project-1</span>
                     <p className="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, fugit.</p>
+                    <p className="star-fork"><span className="stars">0 Stars</span><span>0 Forks</span></p>
                     <button className="btn-small grey darken-3 orange-text text-lighten-2">Visit</button>
                 </div>
             </div>
