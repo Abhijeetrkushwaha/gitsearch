@@ -1,7 +1,8 @@
 import React from 'react';
 import Model from '../images/model.jpg';
 import Repository from './Repository';
-import Footer from './Footer'
+import Footer from './Footer';
+import { connect } from 'react-redux'
 
 function DashBoard() {
     return (
@@ -49,4 +50,6 @@ function DashBoard() {
     )
 }
 
-export default DashBoard;
+const mapStateToProps
+
+export default connect()(DashBoard)

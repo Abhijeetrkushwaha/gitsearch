@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 
 class Search extends Component{
     state = {
@@ -15,7 +16,11 @@ class Search extends Component{
     handleSubmit = (e) => {
         e.preventDefault();
         // console.log(this.props);
-        this.props.history.push('/' + this.state.name)
+        // adding data to state
+        if(this.state.name) {
+            this.props.addName(this.state.name);
+            this.props.history.push('/' + this.state.name);
+        }
     }
 
     render() {
@@ -34,4 +39,10 @@ class Search extends Component{
     }
 }
 
-export default Search
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addName: (name) => { dispatch({ type: 'ADD_NAME', name:name })}
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Search)
