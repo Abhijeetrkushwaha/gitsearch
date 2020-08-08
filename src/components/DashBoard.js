@@ -4,9 +4,10 @@ import Repository from './Repository';
 import Footer from './Footer';
 import { connect } from 'react-redux'
 
-function DashBoard() {
-    return (
-       <div>
+function DashBoard({ name, history }) {
+
+    let userPage = name === 'abhijeetkwh' ? (
+        <div>
             <div className="container dashboard center">
             <div className="profile">
                 <div className="img-div center">
@@ -14,7 +15,7 @@ function DashBoard() {
                 </div>
                 <div className="title center">
                     <h4 className="white-text">AbhijeetKushwaha</h4>
-                    <h5 className="orange-text text-lighten-2">@Abhijeetrkushwaha</h5>
+                    <h5 className="orange-text text-lighten-2">@{name}</h5>
                 </div>
                 <div className="extra-info">
                     <p>Location: Mumbai,India</p>
@@ -45,11 +46,26 @@ function DashBoard() {
             </div>
         </div>
         <Footer />
+        </div>
+    ) : (
+        <div className="container center">
+            <h2 className="white-text">Hey Folk!</h2>
+            <p className="orange-text">User not found</p>
+            <button className="back-btn orange lighten-3" onClick={() => { history.push('/')}}>Go back</button>
+        </div>
+    )
+    return (
+       <div>            
+            {userPage}
        </div>
 
     )
 }
 
-const mapStateToProps
+const mapStateToProps = (state) => {
+    return {
+        name: state.name,
+    }
+}
 
-export default connect()(DashBoard)
+export default connect(mapStateToProps)(DashBoard)

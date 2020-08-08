@@ -74,3 +74,10 @@ textarea:not(.browser-default):focus:not([readonly]){
 .star-fork{
   padding-bottom: 10px;
 }
+.back-btn{
+  margin-top: 20px;
+  background-color: orange;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
