@@ -82,7 +82,7 @@ textarea:not(.browser-default):focus:not([readonly]){
   border-radius: 2px;
 }
 footer{
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
