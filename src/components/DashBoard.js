@@ -8,14 +8,15 @@ function DashBoard({ profileData, repoData }) {
         // console.log(profileData.data);
         // console.log(profileData.data);
         // console.log(repoData.data);
-        let allRepo = repoData.data.length ? (
-            repoData.data.map((item, id) => {
-                return <Repository item={item} key={id} />
-            })
-        ) : null
-    return (
-        <div>            
-            <div>
+        if(repoData && profileData ) {
+            let allRepo = repoData.data.length ? (
+                repoData.data.map((item, id) => {
+                    return <Repository item={item} key={id} />
+                })
+            ) : null
+
+            var profile = profileData ? (
+                <div>
                 <div className="container dashboard center">
                 <div className="profile">
                     <div className="img-div center">
@@ -52,8 +53,13 @@ function DashBoard({ profileData, repoData }) {
             </div>
             <Footer />
             </div>
-        </div>
+            ) : null
+        }
 
+    return (
+        <div>            
+            {profile}
+        </div>
         )
 }
 
