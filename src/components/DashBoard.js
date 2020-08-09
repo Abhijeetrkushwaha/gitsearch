@@ -5,16 +5,16 @@ import Footer from './Footer';
 import { connect } from 'react-redux'
 
 function DashBoard({ profileData, repoData, history }) {
-    if(profileData) {
-        console.log(profileData.data);
-        console.log(repoData);
-        let Repository = repoData.length ? (
-            repoData.map((item, id) => {
+    if(profileData && repoData) {
+        // console.log(profileData.data);
+        // console.log(repoData.data);
+        let allRepo = repoData.data.length ? (
+            repoData.data.map((item, id) => {
                 return <Repository item={item} key={id} />
             })
         ) : null
     
-        let userPage = profileData.data ? (
+        var userPage = profileData.data ? (
             <div>
                 <div className="container dashboard center">
                 <div className="profile">
@@ -47,7 +47,7 @@ function DashBoard({ profileData, repoData, history }) {
                     <h4>Repositories</h4>
                 </div>
                 <div className="row">
-                    {Repository}
+                    {allRepo}
                 </div>
             </div>
             <Footer />
@@ -59,13 +59,13 @@ function DashBoard({ profileData, repoData, history }) {
                 <button className="back-btn orange lighten-3" onClick={() => { history.push('/')}}>Go back</button>
             </div>
         )
-        return (
+    }
+    return (
         <div>            
                 {userPage}
         </div>
 
         )
-    }
 }
 
 const mapStateToProps = (state) => {

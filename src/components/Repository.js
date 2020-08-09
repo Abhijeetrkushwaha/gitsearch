@@ -8,7 +8,7 @@ function Repository({item}){
                     <span className="card-title">{item.name}</span>
                     <p className="des">{item.description}</p>
                     <p className="star-fork"><span className="stars">{item.stargazers_count} Stars</span><span>{item.forks_count} Forks</span></p>
-                    <a href={item.html_url} className="btn-small grey darken-3 orange-text text-lighten-2">Visit</a>
+                    <a href={item.html_url} target="_blank" className="btn-small grey darken-3 orange-text text-lighten-2">Visit</a>
                 </div>
             </div>
         </div>
