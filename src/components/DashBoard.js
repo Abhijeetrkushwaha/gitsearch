@@ -4,18 +4,17 @@ import Repository from './Repository';
 import Footer from './Footer';
 import { connect } from 'react-redux'
 
-function DashBoard({ profileData, repoData, history }) {
-    if(profileData && repoData) {
+function DashBoard({ profileData, repoData }) {
         // console.log(profileData.data);
-        console.log(profileData.data);
+        // console.log(profileData.data);
         // console.log(repoData.data);
         let allRepo = repoData.data.length ? (
             repoData.data.map((item, id) => {
                 return <Repository item={item} key={id} />
             })
         ) : null
-    
-        var userPage = profileData ? (
+    return (
+        <div>            
             <div>
                 <div className="container dashboard center">
                 <div className="profile">
@@ -53,17 +52,6 @@ function DashBoard({ profileData, repoData, history }) {
             </div>
             <Footer />
             </div>
-        ) : (
-            <div className="container center">
-                <h2 className="white-text">Hey Folk!</h2>
-                <p className="orange-text">User not found</p>
-                <button className="back-btn orange lighten-3" onClick={() => { history.push('/')}}>Go back</button>
-            </div>
-        )
-    }
-    return (
-        <div>            
-                {userPage}
         </div>
 
         )
