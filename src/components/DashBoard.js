@@ -13,7 +13,9 @@ function DashBoard({ profileData, repoData }) {
                 repoData.data.map((item, id) => {
                     return <Repository item={item} key={id} />
                 })
-            ) : null
+            ) : (
+<h2>{profileData.data.name} has no Repository</h2>
+               )
 
             var profile = profileData ? (
                 <div>
