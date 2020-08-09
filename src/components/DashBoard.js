@@ -4,9 +4,12 @@ import Repository from './Repository';
 import Footer from './Footer';
 import { connect } from 'react-redux'
 
-function DashBoard({ name, history }) {
-
-    let userPage = name === 'abhijeetkwh' ? (
+function DashBoard({ profileData, repoData, history }) {
+    if(profileData) {
+        console.log(profileData.data);
+        console.log(repoData);
+    }
+    let userPage = true ? (
         <div>
             <div className="container dashboard center">
             <div className="profile">
@@ -15,7 +18,7 @@ function DashBoard({ name, history }) {
                 </div>
                 <div className="title center">
                     <h4 className="white-text">AbhijeetKushwaha</h4>
-                    <h5 className="orange-text text-lighten-2">@{name}</h5>
+                    <h5 className="orange-text text-lighten-2">ahs</h5>
                 </div>
                 <div className="extra-info">
                     <p>Location: Mumbai,India</p>
@@ -64,7 +67,8 @@ function DashBoard({ name, history }) {
 
 const mapStateToProps = (state) => {
     return {
-        name: state.name,
+        repoData: state.repoData,
+        profileData: state.profileData,
     }
 }
 

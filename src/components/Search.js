@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import axios from 'axios'
 
 class Search extends Component{
     state = {
@@ -18,8 +19,27 @@ class Search extends Component{
         // console.log(this.props);
         // adding data to state
         if(this.state.name) {
-            this.props.addName(this.state.name);
+            // this.props.addName(this.state.name);
             this.props.history.push('/' + this.state.name);
+            axios({
+                url: `https://api.github.com/users/${this.state.name}`,
+                data:{
+                    client_id:process.env.REACT_APP_CLIENT_ID,
+                    client_secret:process.env.REACT_APP_CLIENT_SECRET
+                }
+            }).then((res) => {
+                this.props.addProfile(res)
+                axios({
+                    url: `https://api.github.com/users/${this.state.name}/repos`,
+                    data:{
+                        client_id:process.env.REACT_APP_CLIENT_ID,
+                        client_secret:process.env.REACT_APP_CLIENT_SECRET,
+                    }
+                }).then((repository) => {
+                    // console.log(repository)
+                    this.props.addRepo(repository)
+                })
+            })
         }
     }
 
@@ -41,7 +61,8 @@ class Search extends Component{
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addName: (name) => { dispatch({ type: 'ADD_NAME', name:name })}
+        addProfile: (profile) => { dispatch({ type: 'ADD_PROFILE', profile:profile })},
+        addRepo: (repo) => { dispatch({ type: 'ADD_REPO', repo:repo })}
     }
 }
 
