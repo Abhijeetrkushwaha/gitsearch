@@ -20,15 +20,15 @@ class Search extends Component{
         // adding data to state
         if(this.state.name) {
             // this.props.addName(this.state.name);
-            this.props.history.push('/' + this.state.name);
             axios({
                 url: `https://api.github.com/users/${this.state.name}`,
                 data:{
                     client_id:process.env.REACT_APP_CLIENT_ID,
                     client_secret:process.env.REACT_APP_CLIENT_SECRET
                 }
-            }).then((res) => {
-                this.props.addProfile(res)
+            }).then((res) => { 
+                    this.props.history.push('/' + this.state.name);
+                    this.props.addProfile(res)
                 axios({
                     url: `https://api.github.com/users/${this.state.name}/repos`,
                     data:{
@@ -39,6 +39,10 @@ class Search extends Component{
                     // console.log(repository)
                     this.props.addRepo(repository)
                 })
+                
+            }).catch((err) => {
+                alert('User not found', err);
+                document.querySelector('#name').value = ''
             })
         }
     }
@@ -52,7 +56,7 @@ class Search extends Component{
                 </div>
                 <form className="container center" onSubmit={this.handleSubmit}>
                     <input type="text" id="name" onChange={this.handleChange}/>
-                    <button className="btn-small orange lighten-3 black-text">SEARCH</button>
+                    <button id="value" className="btn-small orange lighten-3 black-text">SEARCH</button>
                 </form>
             </div>
         )

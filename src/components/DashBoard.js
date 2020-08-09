@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 function DashBoard({ profileData, repoData, history }) {
     if(profileData && repoData) {
         // console.log(profileData.data);
+        console.log(profileData.data);
         // console.log(repoData.data);
         let allRepo = repoData.data.length ? (
             repoData.data.map((item, id) => {
@@ -14,7 +15,7 @@ function DashBoard({ profileData, repoData, history }) {
             })
         ) : null
     
-        var userPage = profileData.data ? (
+        var userPage = profileData ? (
             <div>
                 <div className="container dashboard center">
                 <div className="profile">
