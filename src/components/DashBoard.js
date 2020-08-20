@@ -29,7 +29,7 @@ function DashBoard({ profileData, repoData }) {
                         <h5 className="orange-text text-lighten-2">@{profileData.data.login}</h5>
                     </div>
                     <div className="extra-info">
-                        <p>Location: {profileData.data.location}</p>
+                        { profileData.data.location ? (<p>Location: {profileData.data.location} </p>) : null }
                     </div>
                     <div className="follo-er-ing">
                         <div className="follower column">
