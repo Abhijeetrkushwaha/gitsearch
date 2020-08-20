@@ -10,7 +10,7 @@ export default function Footer() {
                     ❤️
                   </span>
                   by <a href="https://abhijeetkwh.me/">
-                     Abhijeet.R.Kushwaha
+                     Abhijeet .R. Kushwaha
                   </a>
                 <br />
                 &copy; All Rights Reserved
