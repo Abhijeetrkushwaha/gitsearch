@@ -14,7 +14,7 @@ function DashBoard({ profileData, repoData }) {
                     return <Repository item={item} key={id} />
                 })
             ) : (
-<h2>{profileData.data.name} has no Repository</h2>
+                <h2>{profileData.data.name} has no Repository</h2>
                )
 
             var profile = profileData ? (
@@ -55,7 +55,11 @@ function DashBoard({ profileData, repoData }) {
             </div>
             <Footer />
             </div>
-            ) : null
+            ) : (
+                <div className="center white-text">
+                    <h4>Loading...</h4>
+                </div>
+            )
         }
 
     return (
