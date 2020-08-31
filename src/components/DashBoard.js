@@ -8,16 +8,9 @@ function DashBoard({ profileData, repoData }) {
         // console.log(profileData.data);
         // console.log(profileData.data);
         // console.log(repoData.data);
-        if(repoData && profileData ) {
-            let allRepo = repoData.data.length ? (
-                repoData.data.map((item, id) => {
-                    return <Repository item={item} key={id} />
-                })
-            ) : (
-                <h2>{profileData.data.name} has no Repository</h2>
-               )
+            // let allRepo = 
 
-            var profile = profileData ? (
+            var profile = profileData && repoData ? (
                 <div>
                 <div className="container dashboard center">
                 <div className="profile">
@@ -50,7 +43,16 @@ function DashBoard({ profileData, repoData }) {
                     <h4>Repositories</h4>
                 </div>
                 <div className="row">
-                    {allRepo}
+                    {/* {allRepo} */}
+                    {
+                        repoData.data.length ? (
+                            repoData.data.map((item, id) => {
+                                return <Repository item={item} key={id} />
+                            })
+                        ) : (
+                            <h2>{profileData.data.name} has no Repository</h2>
+                           )
+                    }
                 </div>
             </div>
             <Footer />
@@ -60,7 +62,7 @@ function DashBoard({ profileData, repoData }) {
                     <h4>Loading...</h4>
                 </div>
             )
-        }
+        
 
     return (
         <div>            
