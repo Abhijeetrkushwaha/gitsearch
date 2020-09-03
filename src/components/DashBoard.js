@@ -9,6 +9,7 @@ function DashBoard({ profileData, repoData }) {
         // console.log(profileData.data);
         // console.log(repoData.data);
             // let allRepo = 
+            console.log(profileData);
 
             var profile = profileData && repoData ? (
                 <div>
@@ -19,10 +20,10 @@ function DashBoard({ profileData, repoData }) {
                     </div>
                     <div className="title center">
                         <h4 className="white-text">{profileData.data.name}</h4>
-                        <h5 className="orange-text text-lighten-2">@{profileData.data.login}</h5>
+                        <a href={profileData.data.html_url} target="_blank" ><h5 className="orange-text text-lighten-2">@{profileData.data.login}</h5></a>
                     </div>
                     <div className="extra-info">
-                        { profileData.data.location ? (<p>Location: {profileData.data.location} </p>) : null }
+                        { profileData.data.location ? (<p className="white-text">Location: {profileData.data.location} </p>) : null }
                     </div>
                     <div className="follo-er-ing">
                         <div className="follower column">

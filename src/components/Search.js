@@ -14,6 +14,11 @@ class Search extends Component{
 
     }
 
+    componentDidMount(){
+        this.props.addRepo(null)
+        this.props.addProfile(null)
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
         // console.log(this.props);
