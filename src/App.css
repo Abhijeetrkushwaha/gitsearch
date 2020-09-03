@@ -81,3 +81,7 @@ textarea:not(.browser-default):focus:not([readonly]){
   padding: 5px 10px;
   border-radius: 2px;
 }
+
+.height{
+  height: 190px;
+}

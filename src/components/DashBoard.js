@@ -9,7 +9,7 @@ function DashBoard({ profileData, repoData }) {
         // console.log(profileData.data);
         // console.log(repoData.data);
             // let allRepo = 
-            console.log(profileData);
+            // console.log(profileData);
 
             var profile = profileData && repoData ? (
                 <div>
